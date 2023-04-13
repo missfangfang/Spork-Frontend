@@ -1,7 +1,9 @@
 import React from "react";
-import {Box, Button, Link, TextField, ThemeProvider, Typography} from "@mui/material";
+import { Link } from "react-router-dom";
+import {Box, Button, TextField, ThemeProvider, Typography} from "@mui/material";
 import theme from "../constants";
 import LandingPage from "../LandingPage/LandingPage";
+
 
 class SignUpForm extends React.Component<any, any> {
   render = () => {
@@ -33,7 +35,7 @@ class SignUpForm extends React.Component<any, any> {
               <Box sx={{display: "inline-flex", mt: 2}}>
                 <Typography variant="subtitle1" color="gray">Already have an account?</Typography>
                 <Typography variant="subtitle1" color="primary" sx={{ml: 0.5}}>
-                  <Link underline="none">Login</Link>
+                  <Link to={`/`}>Login</Link>
                 </Typography>
               </Box>
             </Box>

@@ -1,8 +1,9 @@
 import React from "react";
 import {login} from "../utils";
-import {Box, Button, Link, TextField, ThemeProvider, Typography} from "@mui/material";
+import {Box, Button, TextField, ThemeProvider, Typography} from "@mui/material";
 import theme from "../constants";
 import LandingPage from "../LandingPage/LandingPage";
+import { Link } from "react-router-dom";
 
 interface LoginForm {
   username: string,
@@ -55,7 +56,7 @@ class LoginForm extends React.Component {
               <Box sx={{display: "inline-flex", mt: 2}}>
                 <Typography variant="subtitle1" color="gray">Don't have an account?</Typography>
                 <Typography variant="subtitle1" color="primary" sx={{ml: 0.5}}>
-                  <Link underline="none">Sign Up</Link>
+                  <Link to={`/signup`}>Sign Up</Link>
                 </Typography>
               </Box>
             </Box>

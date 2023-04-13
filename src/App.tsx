@@ -1,16 +1,28 @@
 import React from 'react';
-import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './App.css';
 import './LoginForm/LoginForm';
-import {ThemeProvider} from "@mui/material";
-import theme from "./constants";
 import LoginForm from "./LoginForm/LoginForm";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import ErrorPage from "./ErrorPage";
+import SignUpForm from "./SignUpForm/SignUpForm";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <LoginForm />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/signup",
+    element: <SignUpForm />
+  }
+]);
 
 function App() {
   return (
-
-      <LoginForm />
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
   );
 }
 
